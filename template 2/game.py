@@ -197,7 +197,7 @@ def print_menu(exits, room_items, inv_items):
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
     for items in room_items:
-        print("TAKE", items['id'].upper(), "to take", itmes['name'] + ".")
+        print("TAKE", items['id'].upper(), "to take", items['name'] + ".")
     for itmes in inv_items:
         print("DROP", items['id'].upper(), "to drop your", items['id'] + ".")
         
@@ -250,7 +250,7 @@ def execute_take(item_id):
     for item in current_room['itmes']:
         takeItem.append(item['id'])
     if item_id in takeItem:
-        inventory = inventory + ([d for d in (current_room['items'] if d.get('id') == item_id])
+        inventory = inventory + ([d for d in (current_room['items']) if d.get('id') == item_id])
         print(inventory)
         current_room['items'] = [d for d in (current_room['items']) if d.get('id') != item_id]
         print(item_id + " added to your inventory.")
