@@ -79,7 +79,7 @@ def display_room(room):
     print()
     print(room["name"].upper())
     print()
-    print(room["desrciption"])
+    print(room["description"])
     print()
 
     
@@ -131,7 +131,7 @@ def print_menu(exits):
     """
     print("You can:")
     for direction in exits:
-        print_menu_line(directions,exit_lead_to(exits,directions))
+        print_menu_line(direction,exit_leads_to(exits,direction))
 
     print("Where do you want to go?")
 
